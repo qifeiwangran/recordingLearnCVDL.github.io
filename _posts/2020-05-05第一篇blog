@@ -1,0 +1,17 @@
+从今天起开始记录学习DL和CV的一些笔记
+common rules of thumb
+1：
+Common input layer sizes include 3232, 6464,  9696, 224224, 227227 and 229229
+2：
+My personal preference is to apply zero-padding to my CONV layers to ensure the output ，dimension size matches the input dimension size
+– the only exception to this rule is if I want to purposely reduce spatial dimensions via convolution
+3：
+Batch normalization is an expensive operation which can double or triple the amount of time it takes to train your CNN; however, 
+I recommend using BN in nearly all situations
+4：
+I also place the batch normalization after the activation,
+5：
+Dropout (DO) is typically applied in between FC layers with a dropout probability of 50% –you should consider applying dropout 
+in nearly every architecture you build. While not always performed, I also like to include dropout layers 
+(with a very small probability, 10-25%) between
+POOL and CONV layers.
